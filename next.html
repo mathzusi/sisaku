@@ -2,9 +2,74 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>次のページ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>試作サイト_2問目</title>
+
+  <style>
+    body {
+      background-color: #52ab1b;
+      color: white;
+      text-align: center;
+      font-family: sans-serif;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+
+    input, button {
+      border-radius: 5px;
+      border: none;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  
+  </style>
 </head>
+
 <body>
-  <h1>次のステージへようこそ！</h1>
+  <h1>2問目</h1>
+  <p>『まだ無いよ』</p>
+
+ 
+
+  <input type="text" id="answer" placeholder="答えを入力" style="margin-top: 20px;">
+  <button onclick="checkAnswer()">決定</button>
+
+  <div id="result"></div>
+
+  <script>
+  function checkAnswer() {
+    let input = document.getElementById("answer").value;
+
+    // 表記ゆれ対策
+    input = input.toLowerCase();        // 大文字→小文字
+    input = input.trim();               // 前後の空白削除
+
+    // 正解パターン
+    const correctAnswers = [""];
+
+    if (correctAnswers.includes(input)) {
+      document.getElementById("result").textContent = "正解！";
+
+       setTimeout(() => {
+        window.location.href = "next.html";
+      }, 1000);
+
+    } else {
+      document.getElementById("result").textContent = "不正解...";
+    }
+  }
+  </script>
 </body>
 </html>
