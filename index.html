@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>謎解きページ</title>
+  <title>試作サイト_1問目</title>
 
   <style>
     body {
-      background-color: #111;
+      background-color: #52ab1b;
       color: white;
       text-align: center;
       font-family: sans-serif;
@@ -24,6 +24,11 @@
       margin-left: 10px;
     }
 
+    input, button {
+      border-radius: 5px;
+      border: none;
+    }
+
     #result {
       margin-top: 20px;
       font-size: 20px;
@@ -33,7 +38,7 @@
 </head>
 
 <body>
-  <h1>一問目</h1>
+  <h1>1問目</h1>
   <p>『🔵べて』</p>
 
   <img src="🔵べて.png" style="display:block; margin:auto;" width="300">
@@ -57,7 +62,9 @@
     if (correctAnswers.includes(input)) {
       document.getElementById("result").textContent = "正解！";
 
-       window.location.href = "next.html";
+       setTimeout(() => {
+        window.location.href = "next.html";
+      }, 1000);
 
     } else {
       document.getElementById("result").textContent = "不正解...";
