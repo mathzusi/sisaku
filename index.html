@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>謎解きページ</title>
+
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      font-family: sans-serif;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>問題</h1>
+  <p>「りんご」の英語は？</p>
+
+  <input type="text" id="answer" placeholder="答えを入力">
+  <button onclick="checkAnswer()">決定</button>
+
+  <div id="result"></div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value;
+
+      if (input.toLowerCase() === "apple") {
+        document.getElementById("result").textContent = "正解！";
+
+        setTimeout(() => {
+            window.location.href = "next.html";
+        }, 1000);
+
+      } else {
+        document.getElementById("result").textContent = "不正解...";
+      }
+    }
+  </script>
+</body>
+</html>
